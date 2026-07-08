@@ -21,19 +21,19 @@ Built with the standard library only — no external frameworks — to demonstra
 | Port flap | An interface transitions up/down 4+ times | 30 seconds |
 | Auth failure burst | 3+ failed logins from the same source IP | 30 seconds |
 
-Thresholds and window size are configured as constants at the top of `log_monitor.py` — change them to match your actual log volume and tolerance.
+Thresholds and window size are configured as constants at the top of `a.py` — change them to match your actual log volume and tolerance.
 
 ## Usage
 
 **Live tailing (production mode):**
 ```
-python3 log_monitor.py --file /var/log/syslog
+python3 a.py --file /var/log/syslog
 ```
 This waits at the end of the file and processes new lines as they're written — this is the real-world mode.
 
 **Replay mode (for testing against a static sample log):**
 ```
-python3 log_monitor.py --file sample_logs/test.log --replay
+python3 a.py --file sample_logs/test.log --replay
 ```
 Reads the whole file once and exits. Use this to validate behavior without needing a live growing log.
 
@@ -67,7 +67,7 @@ Correctly fired once the 4th flap crossed the threshold, again on the 5th (see K
 ```
 net-log-monitor/
 ├── README.md
-├── log_monitor.py
+├── a.py
 ├── sample_logs/
 │   └── test.log
 └── alerts.json          (generated on run — do not commit if it contains real data)

@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Mac/System
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Tests/cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local DB
+*.db
+*.sqlite
+*.sqlite3
